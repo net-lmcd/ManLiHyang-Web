@@ -4,7 +4,9 @@ import createSagaMiddleware from 'redux-saga'
 import reducer from './reducers'
 
 const sagaMiddleware = createSagaMiddleware()
-const middlewares = [applyMiddleware(sagaMiddleware)]
-const _compose = process.env.NODE_ENV === 'production' ? composeWithDevTools({serialize: true, trace: true}) : compose
+const middlewares = [sagaMiddleware]
+const _compose = process.env.NODE_ENV !== 'production' ? composeWithDevTools({serialize: true, trace: true}) : compose
 
-export default (initialState) => createStore(reducer, initialState, _compose(...middlewares))
+// sagaMiddleware.run(rootSaga)
+
+export default (initialState) => createStore(reducer, initialState, _compose(applyMiddleware(...middlewares)))
