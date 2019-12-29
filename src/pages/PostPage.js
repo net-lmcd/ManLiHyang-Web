@@ -1,9 +1,13 @@
 import React from 'react'
-import { Post } from '../components/Posts'
+import { Post, CreatePost } from '../components/Posts'
 
 const PostPage = props => {
-  return(
-      <Post/>
+  const { match : {params : {path} } } = props
+  return (
+      <>
+        {/*{ path === 'detail' && <Post/>}*/}
+        { path === 'create' && <CreatePost/>}
+      </>
   )
 }
 
