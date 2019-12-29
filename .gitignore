@@ -112,6 +112,8 @@ typings/
 
 #build
 .env
+.env.dev
+.env.production
 dist
 /elb.zip
 
