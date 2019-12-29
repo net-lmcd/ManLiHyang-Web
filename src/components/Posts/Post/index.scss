@@ -1,0 +1,23 @@
+.wrap{
+  height: 80vh;
+  width : 100vw;
+  .box{
+    max-width : 83%;
+    max-height : 100%;
+    min-height: 100%;
+    margin : 20% 8.5% 0 8.5%;
+    border-radius: 4px;
+    background : gainsboro;
+    .sheet{
+      border-radius: 4px;
+      background: antiquewhite;
+      max-height:61vh;
+      min-height:61vh;
+      overflow-y: scroll;
+      .contents{
+        min-width : 100%;
+        overflow-y: scroll;
+      }
+    }
+  }
+}

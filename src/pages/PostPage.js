@@ -1,9 +1,9 @@
 import React from 'react'
-import Posts from '../components/Posts'
+import { Post } from '../components/Posts'
 
 const PostPage = props => {
   return(
-      <Posts/>
+      <Post/>
   )
 }
 

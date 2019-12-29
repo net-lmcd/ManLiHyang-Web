@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Post } from "../Posts"
 
 const Main = props => {
-  return(
-      <div>메인 페이지</div>
+  return (
+      <>
+        <Post/>
+        <Post/>
+      </>
   )
 }
 

@@ -1,9 +1,1 @@
-import React from 'react'
-
-const Posts = props => {
-  return(
-      <div>Posts</div>
-  )
-}
-
-export default Posts
+export { default as Post} from './Post'
