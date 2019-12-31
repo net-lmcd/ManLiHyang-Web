@@ -112,9 +112,9 @@ typings/
 
 #build
 .env
-*.dev
-*.production
+
 dist
+
 /elb.zip
 
 #*.pem
