@@ -58,15 +58,15 @@
           height : 100px;
           cursor : pointer;
           img{
-            flex : 0.25;
+            width : 25%;
             background: antiquewhite;
           }
           .book-info{
             margin-left : 14px;
-            flex : 0.75;
+            flex : 1;
             .book-title{
               display: block;
-              font-size : 1rem;
+              font-size : 1.0rem;
               line-height: 1.31;
             }
             .book-author{
@@ -87,7 +87,7 @@
     left : 0;
     top : calc(100vh - 9.7vh);
     width : 100vw;
-    height : 9.7vh;
+    height : 9.77vh;
     background : #000000;
     color : #ffffff;
     font-size : 1.1rem;
