@@ -1,14 +1,14 @@
-import {SUCCESS_GET_BOOKS} from "../actions/books"
+import {SUCCESS_GET_BOOK} from "../actions/books"
 
 const initialState = {
-  result : ''
+  list : ''
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SUCCESS_GET_BOOKS : {
+    case SUCCESS_GET_BOOK : {
       console.log('result', action.payload)
-      return { result : action.payload}
+      return { list : action.payload}
     }
     default :
       return state

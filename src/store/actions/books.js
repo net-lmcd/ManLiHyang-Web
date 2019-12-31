@@ -1,10 +1,10 @@
-export const GET_BOOKS = 'GET_BOOKS'
-export const SUCCESS_GET_BOOKS = 'SUCCESS_GET_BOOKS'
-export const FAILURE_GET_BOOKS = 'FAILURE_GET_BOOKS'
+export const GET_BOOK = 'GET_BOOKS'
+export const SUCCESS_GET_BOOK = 'SUCCESS_GET_BOOKS'
+export const FAILURE_GET_BOOK = 'FAILURE_GET_BOOKS'
 
-export const getBooks = query => {
+export const getBook = query => {
   return {
-    type : GET_BOOKS,
+    type : GET_BOOK,
     payload : {
       method : 'get',
       url : 'https://dapi.kakao.com/v3/search/book',

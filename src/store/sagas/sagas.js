@@ -1,7 +1,7 @@
 import {all, put, call, takeEvery} from "redux-saga/effects"
 import axios from 'axios'
 import {GET_POST_LIST, SUCCESS_GET_POST_LIST, FAILURE_GET_POST_LIST} from "../actions/posts"
-import {GET_BOOKS, FAILURE_GET_BOOKS, SUCCESS_GET_BOOKS} from "../actions/books"
+import {GET_BOOK, FAILURE_GET_BOOK, SUCCESS_GET_BOOK} from "../actions/books"
 
 
 export function* getPostList(action) {
@@ -15,10 +15,10 @@ export function* getPostList(action) {
 
 export function* getBooks(action) {
   try {
-    const result = yield call(axios, action.payload)
-    yield put({type: SUCCESS_GET_BOOKS, payload: result})
+    const {data} = yield call(axios, action.payload)
+    yield put({type: SUCCESS_GET_BOOK, payload: data})
   } catch (err) {
-    yield put({type: FAILURE_GET_BOOKS, err})
+    yield put({type: FAILURE_GET_BOOK, err})
   }
 }
 
@@ -27,7 +27,7 @@ function* watchGetPostList() {
 }
 
 function* watchGetBooks() {
-  yield takeEvery(GET_BOOKS, getBooks)
+  yield takeEvery(GET_BOOK, getBooks)
 }
 
 export default function* rootSagas() {
