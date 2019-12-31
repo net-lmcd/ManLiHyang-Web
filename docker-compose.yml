@@ -1,20 +1,19 @@
 version: '3.6'
 services:
-  front:
-    image: 507341129552.dkr.ecr.ap-northeast-2.amazonaws.com/front-dev:latest
+  admin:
+    image: 561808874720.dkr.ecr.ap-northeast-2.amazonaws.com/manlihyang-web:latest
     restart: always
     environment:
-      - VIRTUAL_HOST=dev.wemeet247.com
+      - VIRTUAL_HOST=ec2-52-78-80-199.ap-northeast-2.compute.amazonaws.com
       - VIRTUAL_PORT=5000
-      - LETSENCRYPT_HOST=dev.wemeet247.com
+      - LETSENCRYPT_HOST=ec2-52-78-80-199.ap-northeast-2.compute.amazonaws.com
     networks:
       - nginx-proxy
-
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
-      - 80
-      - 443
+      - 80:80
+      - 443:443
     restart: always
     volumes:
       - /nginx/certs:/etc/nginx/certs
@@ -25,7 +24,6 @@ services:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     networks:
       - nginx-proxy
-
   letsencrypt-nginx-proxy:
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
@@ -36,8 +34,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - nginx-proxy
-
 networks:
   nginx-proxy:
     name: nginx-proxy
-
