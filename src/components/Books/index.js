@@ -1,16 +1,14 @@
 import React, {useEffect, useRef} from 'react'
 import './index.scss'
 
-let last_scroll_position = 0
-let windowHeight = window.innerHeight
 
 const Books = ({books, dispatch, onGetBook}) => {
   const contentsRef = useRef('')
-  const {bookList, is_end, page} = books
+  const {bookList, is_end, page, bookName} = books
   const mapToBookList = bookList => {
-    return bookList.map( (book, idx) => {
-      const { thumbnail, title, publisher, authors } = book
-      return(
+    return bookList.map((book, idx) => {
+      const {thumbnail, title, publisher, authors} = book
+      return (
           <li key={idx}>
             {thumbnail ?
                 <img src={thumbnail} alt=""/>
@@ -19,28 +17,34 @@ const Books = ({books, dispatch, onGetBook}) => {
             }
             <div className="book-info">
               <span className="book-title">{title}</span>
-              <span className="book-author">{authors.map(ele => ele+' ')} 지음 | {publisher}</span>
+              <span className="book-author">{authors.map(ele => ele + ' ')} 지음 | {publisher}</span>
             </div>
           </li>
       )
     })
   }
-  useEffect(()=>{
-    const eventHandler = () => {
-      last_scroll_position = window.scrollY
-      let entireHeight = contentsRef.current.scrollHeight
-      if(entireHeight < (windowHeight + last_scroll_position)){
-        window.requestAnimationFrame( () => {
-          // if(!is_end) dispatch(onGetBook({}))
-        })
-      }
+
+  const eventHandler = () => {
+    const {scrollHeight, clientHeight, scrollTop} = contentsRef.current
+    if (scrollHeight - (scrollTop + clientHeight) < 50) {
+      window.requestAnimationFrame( () => {
+        if (!is_end && bookName) dispatch(onGetBook({query: bookName, page}))
+      })
     }
-    if(bookList.length) window.addEventListener('scroll', eventHandler)
-    return () => window.removeEventListener('scroll', eventHandler)
-  },[bookList])
-  return(
-      <div className="contents-wrap">
-        <ul ref={contentsRef}>
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', eventHandler, true)
+  }, [books])
+
+  useEffect(()=>{
+    return () => {
+      window.removeEventListener('scroll', eventHandler)
+    }
+  },[])
+  return (
+      <div className="contents-wrap" ref={contentsRef}>
+        <ul>
           {bookList.length > 0 &&
           mapToBookList(bookList)
           }
