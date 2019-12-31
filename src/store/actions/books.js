@@ -1,6 +1,9 @@
 export const GET_BOOK = 'GET_BOOKS'
 export const SUCCESS_GET_BOOK = 'SUCCESS_GET_BOOKS'
 export const FAILURE_GET_BOOK = 'FAILURE_GET_BOOKS'
+export const SET_BOOK_NAME = 'SET_BOOK_NAME'
+
+export const setBookName = name => ({type : SET_BOOK_NAME, payload : name})
 
 export const getBook = params => {
   return {

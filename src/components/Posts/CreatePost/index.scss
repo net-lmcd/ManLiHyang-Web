@@ -45,42 +45,6 @@
         text-align: right;
       }
     }
-    .contents-wrap{
-      margin-top : 10%;
-      width : 100%;
-      overflow-y : scroll;
-      max-height : calc(100% - 9.7vh - 15%);
-      ul{
-        all : unset;
-        li{
-          list-style: none;
-          display: flex;
-          height : 100px;
-          cursor : pointer;
-          img{
-            width : 25%;
-            background: antiquewhite;
-          }
-          .book-info{
-            margin-left : 14px;
-            flex : 1;
-            .book-title{
-              display: block;
-              font-size : 1.0rem;
-              line-height: 1.31;
-            }
-            .book-author{
-              font-size : 0.8rem;
-              line-height: 1.5;
-              opacity: 0.5;
-            }
-          }
-        }
-        li + li {
-          margin-top : 5%;
-        }
-      }
-    }
   }
   .create-footer{
     position: absolute;
