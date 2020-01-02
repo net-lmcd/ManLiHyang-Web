@@ -1,4 +1,5 @@
 .wrap{
+
   .black-top{
     width : 100vw;
     height : 17%; // 6분의1
@@ -19,5 +20,21 @@
         font-family: 'roboto', sans-serif;
       }
     }
+  }
+  .image-section{
+    width : 100vw;
+    height : 100%;
+    img{
+      height : 100%;
+      width : 100%;
+    }
+  }
+  .black-bottom{
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background: #111111;
+    width : 100vw;
+    height : 8%;
   }
 }

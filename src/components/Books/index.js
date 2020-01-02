@@ -9,6 +9,7 @@ const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
 
 
   const handlePushCropPage = thumbnail => {
+    window.removeEventListener('scroll', eventHandler, true)
     dispatch(onSetThumbnail(thumbnail))
     history.push('/post/crop')
   }
@@ -43,14 +44,13 @@ const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
       })
     }
   }
-  useEffect(() => {
-    tick = false
-    window.addEventListener('scroll', eventHandler, true)
-  }, [books])
+
 
   useEffect(()=>{
-    return () => window.removeEventListener('scroll', eventHandler)
-  },[])
+    tick = false
+    window.addEventListener('scroll', eventHandler, true)
+    return () => window.removeEventListener('scroll', eventHandler, true)
+  },[books])
 
   return (
       <div className="contents-wrap" ref={contentsRef}>

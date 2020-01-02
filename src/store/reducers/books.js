@@ -6,7 +6,7 @@ const initialState = {
   is_end : false, // 검색 더 할 수 있는지 check,
   page : 1,
   bookName : '',
-  thumbnail: ''
+  thumbnail: 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F3760708%3Ftimestamp%3D20200102131227'
 }
 
 export default (state = initialState, action) => {

@@ -9,7 +9,7 @@ const PostPage = props => {
       <>
         {/*{ path === 'detail' && <Post/>}*/}
         { path === 'search' && <SearchBook dispatch={dispatch} history={history}/>}
-        { path === 'crop' && <ImageCrop/>}
+        { path === 'crop' && <ImageCrop history={history}/>}
 
       </>
   )
