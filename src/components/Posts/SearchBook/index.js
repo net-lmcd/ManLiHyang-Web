@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from "react-router-dom"
 import {useSelector} from "react-redux"
-import {getBook, setBookName} from "../../../store/actions/books"
+import {getBook, setBookName, setThumbnail} from "../../../store/actions/books"
 import Books from '../../Books'
 import './index.scss'
 
-const CreatePost = props => {
+const SearchBook = props => {
   const [searchValue, setSearchValue] = useState('')
-  const {dispatch} = props
+  const {dispatch, history} = props
   const books = useSelector(state => state.books)
   const handleCategory = (e, type) => {}
   const handleKeyUp = e => {
@@ -46,7 +46,9 @@ const CreatePost = props => {
           <Books
               books={books}
               dispatch={dispatch}
+              history={history}
               onGetBook={getBook}
+              onSetThumbnail={setThumbnail}
           />
         </div>
         <div className="create-footer">
@@ -58,4 +60,4 @@ const CreatePost = props => {
   )
 }
 
-export default CreatePost
+export default SearchBook

@@ -1,16 +1,23 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
 import './index.scss'
 
 
-const Books = ({books, dispatch, onGetBook}) => {
+const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
   let tick = false
   const contentsRef = useRef('')
   const {bookList, is_end, page, bookName} = books
+
+
+  const handlePushCropPage = thumbnail => {
+    dispatch(onSetThumbnail(thumbnail))
+    history.push('/post/crop')
+  }
+
   const mapToBookList = bookList => {
     return bookList.map((book, idx) => {
       const {thumbnail, title, publisher, authors} = book
       return (
-          <li key={idx}>
+          <li key={idx} onClick={()=>handlePushCropPage(thumbnail)}>
             {thumbnail ?
                 <img src={thumbnail} alt=""/>
                 :

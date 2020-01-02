@@ -1,11 +1,12 @@
-import {SET_BOOK_NAME, SUCCESS_GET_BOOK} from "../actions/books"
+import {SET_BOOK_NAME, SET_THUMBNAIL, SUCCESS_GET_BOOK} from "../actions/books"
 import { map } from "../../lib/fx"
 
 const initialState = {
   bookList : [],
   is_end : false, // 검색 더 할 수 있는지 check,
   page : 1,
-  bookName : ''
+  bookName : '',
+  thumbnail: ''
 }
 
 export default (state = initialState, action) => {
@@ -37,6 +38,9 @@ export default (state = initialState, action) => {
     }
     case SET_BOOK_NAME : {
       return {...initialState, bookName : action.payload}
+    }
+    case SET_THUMBNAIL : {
+      return {...state, thumbnail : action.payload}
     }
     default :
       return state
