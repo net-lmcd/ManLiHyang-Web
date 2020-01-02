@@ -1,8 +1,9 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import './index.scss'
 
 
 const Books = ({books, dispatch, onGetBook}) => {
+  let tick = false
   const contentsRef = useRef('')
   const {bookList, is_end, page, bookName} = books
   const mapToBookList = bookList => {
@@ -26,22 +27,24 @@ const Books = ({books, dispatch, onGetBook}) => {
 
   const eventHandler = () => {
     const {scrollHeight, clientHeight, scrollTop} = contentsRef.current
-    if (scrollHeight - (scrollTop + clientHeight) < 50) {
+    if (scrollHeight - (scrollTop + clientHeight) < 10) {
       window.requestAnimationFrame( () => {
-        if (!is_end && bookName) dispatch(onGetBook({query: bookName, page}))
+        if (!is_end && bookName && !tick) {
+          tick = true
+          dispatch(onGetBook({query: bookName, page}))
+        }
       })
     }
   }
-
   useEffect(() => {
+    tick = false
     window.addEventListener('scroll', eventHandler, true)
   }, [books])
 
   useEffect(()=>{
-    return () => {
-      window.removeEventListener('scroll', eventHandler)
-    }
+    return () => window.removeEventListener('scroll', eventHandler)
   },[])
+
   return (
       <div className="contents-wrap" ref={contentsRef}>
         <ul>

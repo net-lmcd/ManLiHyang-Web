@@ -1,4 +1,4 @@
-import {all, put, call, takeEvery} from "redux-saga/effects"
+import {all, put, call, takeEvery, takeLatest} from "redux-saga/effects"
 import axios from 'axios'
 import {GET_POST_LIST, SUCCESS_GET_POST_LIST, FAILURE_GET_POST_LIST} from "../actions/posts"
 import {GET_BOOK, FAILURE_GET_BOOK, SUCCESS_GET_BOOK} from "../actions/books"
@@ -27,7 +27,7 @@ function* watchGetPostList() {
 }
 
 function* watchGetBooks() {
-  yield takeEvery(GET_BOOK, getBooks)
+  yield takeLatest(GET_BOOK, getBooks)
 }
 
 export default function* rootSagas() {
