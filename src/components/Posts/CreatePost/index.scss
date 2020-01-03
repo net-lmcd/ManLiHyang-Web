@@ -12,20 +12,34 @@
     filter: blur(22px);
   }
   .gray-zone{
-    width : 100%;
+    //max-width : 100vw;
     height : 100%;
     background-color: #000000;
     opacity: 0.35;
     z-index : 2;
+    padding : 6% 5% 32px 5%;
     .btn-section{
-      width : 100vw;
-      height : 10%;
+      max-width : 100vw;
       color: white;
-      .cancel-btn{
-        font-size : 30px;
-        text-decoration: none;
-        font-weight: 600;
-        color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width : 15px;
+        height : 15px;
+        margin-right: auto;
+      }
+      .contents-length{
+        opacity: 0.6;
+        font-family: 'roboto', sans-serif;
+        font-size : 15px;
+        margin-left : 4.5%;
+      }
+      .save-btn{
+        font-family: 'roboto', sans-serif;
+        opacity: 0.6;
+        font-size : 18px;
+        margin-left: auto;
       }
     }
   }
