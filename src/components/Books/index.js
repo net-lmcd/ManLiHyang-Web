@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react'
+import ReactCrop from 'react-image-crop';
 import './index.scss'
 
 
@@ -9,9 +10,8 @@ const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
 
 
   const handlePushCropPage = thumbnail => {
-    window.removeEventListener('scroll', eventHandler, true)
     dispatch(onSetThumbnail(thumbnail))
-    history.push('/post/crop')
+    history.push('/post/create')
   }
 
   const mapToBookList = bookList => {
