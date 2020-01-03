@@ -22,8 +22,8 @@ if [[ -z ${AWS_PROFILE} ]]; then
   exit 1
 fi
 
-#npm run build
-#errorCheck
+npm run build
+errorCheck
 
 docker build -t ${IMAGE_NAME} .
 errorCheck

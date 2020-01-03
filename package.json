@@ -1,6 +1,7 @@
 {
   "name": "manlihyang-web",
   "version": "0.1.0",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "cp env.dev ./.env && react-scripts start",
-    "build": "react-scripts build",
+    "build": "cp env.dev ./.env && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "bash scripts/deploy-dev.sh"

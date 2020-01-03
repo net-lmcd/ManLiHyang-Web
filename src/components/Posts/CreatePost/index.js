@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { useSelector } from "react-redux"
 import './index.scss'
 
-// save 버튼 글자 없으면 색깔 다름
 
 const CreatePost = props => {
   const { history, dispatch } = props
@@ -15,7 +14,9 @@ const CreatePost = props => {
         <img src={bookInfo.thumbnail} alt="" className="background-thumbnail"/>
         <div className="gray-zone">
           <div className="btn-section">
-             <img src="/assets/white-cancel.png" alt=""/>
+             <img src="/assets/white-cancel.png"
+                  onClick={()=>history.push('/post/search')}
+                  alt=""/>
             <span className="contents-length">
               {inputV ? inputV.length : 0}/500
             </span>
