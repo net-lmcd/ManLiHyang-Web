@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from "react-router-dom"
 import {useSelector} from "react-redux"
-import {getBook, setBookName, setThumbnail} from "../../../store/actions/books"
+import {getBook, setBookName, setBookInfo} from "../../../store/actions/books"
 import Books from '../../Books'
 import './index.scss'
 
@@ -48,7 +48,7 @@ const SearchBook = props => {
               dispatch={dispatch}
               history={history}
               onGetBook={getBook}
-              onSetThumbnail={setThumbnail}
+              onSetBookInfo={setBookInfo}
           />
         </div>
         <div className="create-footer">

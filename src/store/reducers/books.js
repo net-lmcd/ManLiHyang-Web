@@ -1,12 +1,15 @@
-import {SET_BOOK_NAME, SET_THUMBNAIL, SUCCESS_GET_BOOK} from "../actions/books"
+import {SET_BOOK_NAME, SET_BOOK_INFO, SUCCESS_GET_BOOK} from "../actions/books"
 import { map } from "../../lib/fx"
 
 const initialState = {
   bookList : [],
   is_end : false, // 검색 더 할 수 있는지 check,
   page : 1,
-  bookName : '우아한 형제들',
-  thumbnail: 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F3760708%3Ftimestamp%3D20200102131227'
+  bookName : '',
+  bookInfo : {
+    thumbnail: 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F3760708%3Ftimestamp%3D20200102131227',
+    title : '우아한 형제들'
+  }
 }
 
 export default (state = initialState, action) => {
@@ -39,8 +42,8 @@ export default (state = initialState, action) => {
     case SET_BOOK_NAME : {
       return {...initialState, bookName : action.payload}
     }
-    case SET_THUMBNAIL : {
-      return {...state, thumbnail : action.payload}
+    case SET_BOOK_INFO : {
+      return {...state, bookInfo : action.payload}
     }
     default :
       return state

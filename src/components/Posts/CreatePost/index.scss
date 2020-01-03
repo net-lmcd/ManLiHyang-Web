@@ -19,6 +19,7 @@
 
     .btn-section{
       max-width : 100vw;
+      margin-bottom : 7%;
       color: white;
       display: flex;
       justify-content: center;
@@ -36,11 +37,27 @@
       }
       .save-btn{
         font-family: 'roboto', sans-serif;
-        opacity: 0.6;
         font-size : 18px;
         margin-left: auto;
       }
     }
+    textarea{
+      display: block;
+      margin-top : 7%;
+      all : unset;
+      width : 100%;
+      height: 78%;
+      overflow: scroll;
+      font-family: NanumMyeongjo, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.7;
+      letter-spacing: -0.27px;
+      color: #ffffff;
+      -ms-word-break: break-all;
+      word-break: break-all;
+    }
+
     .description{
       width : 100%;
       height: 80%;

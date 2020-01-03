@@ -3,14 +3,14 @@ import ReactCrop from 'react-image-crop';
 import './index.scss'
 
 
-const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
+const Books = ({books, dispatch, history, onGetBook, onSetBookInfo}) => {
   let tick = false
   const contentsRef = useRef('')
   const {bookList, is_end, page, bookName} = books
 
 
-  const handlePushCropPage = thumbnail => {
-    dispatch(onSetThumbnail(thumbnail))
+  const handlePushCropPage = (thumbnail, title) => {
+    dispatch(onSetBookInfo(thumbnail, title))
     history.push('/post/create')
   }
 
@@ -18,7 +18,7 @@ const Books = ({books, dispatch, history, onGetBook, onSetThumbnail}) => {
     return bookList.map((book, idx) => {
       const {thumbnail, title, publisher, authors} = book
       return (
-          <li key={idx} onClick={()=>handlePushCropPage(thumbnail)}>
+          <li key={idx} onClick={()=>handlePushCropPage(thumbnail, title)}>
             {thumbnail ?
                 <img src={thumbnail} alt=""/>
                 :
