@@ -1,8 +1,8 @@
 .main-wrap{
   padding : 5%;
-  width : 100vw;
+  max-width : 100vw;
   .search-bar{
-    max-width: 90%;
+    max-width: 100%;
     display: flex;
     button{
       margin-left: 7px;

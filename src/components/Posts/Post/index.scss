@@ -1,3 +1,70 @@
-.wrap{
+.post-wrap{
+  max-width : 90vw;
+  margin-top : 5%;
+  height : 61vh;
 
+  .post-header{
+    display: flex;
+    align-items: center;
+    .profile{
+      width : 1.75rem;
+      height : 1.75rem;
+      border-radius: 14px;
+      background-color: #d8d8d8;
+    }
+    .user-name{
+      font-family: Roboto, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+
+      display: flex;
+      align-items: center;
+      height : 1.75rem;
+      margin-left : 3%;
+    }
+    .created-date{
+      font-family: Roboto, sans-serif;
+      font-size: 0.8rem;
+      line-height: 1;
+      letter-spacing: 0.1px;
+      color: #949494;
+      display: flex;
+      align-items: center;
+      height : 1.75rem;
+      margin-left : 3%;
+
+    }
+    .comment{
+      margin-left : auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img+span{ margin-left : 10%;}
+    }
+    .like{
+      margin-left : 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img+span{ margin-left : 10%;}
+    }
+    .share-btn{
+      margin-left: 5%;
+    }
+
+    //count
+    .count{
+      font-family: Roboto, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 2.09;
+      text-align: right;
+      color: #949494;
+    }
+
+    //button
+    .comment-btn{ width : 1rem; height : 1.05rem;}
+    .like-btn { width : 1.15rem; height : 1.05rem;}
+    .share-btn{ width : 1.15rem; height : 1.175rem;}
+  }
 }
