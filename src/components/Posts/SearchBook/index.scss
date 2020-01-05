@@ -10,34 +10,6 @@
     }
     .search-box{
       display: flex;
-      .input-area{
-        flex : 0.8;
-        position: relative;
-        .input-search{
-          position: absolute;
-          top : 13px;
-          left : 14px;
-        }
-        .input-cancel{
-          position: absolute;
-          top : 11px;
-          left : calc(100% - 24px);
-        }
-        input{
-          border : none;
-          border-radius: 4.5px;
-          background: #f5f5f5;
-          outline: none;
-          min-width : calc(100% - 34px);
-          height : 36px;
-          font-size : 14px;
-          padding-left : 34px;
-          &::placeholder{
-            color : #111111;
-            opacity: 0.25;
-          }
-        }
-      }
       button{
         flex:0.2;
         font-size : 15px;

@@ -4,11 +4,13 @@ import {useSelector} from "react-redux"
 import {getBook, setBookName, setBookInfo} from "../../../store/actions/books"
 import Books from '../../Books'
 import './index.scss'
+import { SearchInput } from "../../Common"
 
 const SearchBook = props => {
   const [searchValue, setSearchValue] = useState('')
   const {dispatch, history} = props
   const books = useSelector(state => state.books)
+
   const handleCategory = (e, type) => {}
   const handleKeyUp = e => {
     if (e.keyCode === 13) handleSearchBook(searchValue)
@@ -28,19 +30,11 @@ const SearchBook = props => {
             <img src="/assets/close.png"/>
           </Link>
           <div className="search-box">
-            <div className="input-area">
-              <img src="/assets/icon-search.png" className="input-search"/>
-              <img src="/assets/button-cancel.png"
-                   className="input-cancel"
-                   onClick={() => setSearchValue('')}
-              />
-              <input type="text"
-                     placeholder="Search"
-                     value={searchValue}
-                     onKeyUp={e => handleKeyUp(e)}
-                     onChange={(e) => setSearchValue(e.target.value)}
-              />
-            </div>
+            <SearchInput
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              handleKeyUp={handleKeyUp}
+            />
             <button onClick={() => handleSearchBook(searchValue)}>Search</button>
           </div>
           <Books
