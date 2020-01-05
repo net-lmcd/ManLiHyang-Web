@@ -1,7 +1,10 @@
 import React from 'react'
 import './index.scss'
 
-const Post = props => {
+const Post = ({posts}) => {
+
+  const thumbnail = 'https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F3760708%3Ftimestamp%3D20200102131227'
+
   return(
       <div className="post-wrap">
         <div className="post-header">
@@ -33,8 +36,11 @@ const Post = props => {
                  className="share-btn"
             />
         </div>
-        <div>
+        <div className="contents-box">
+          <img src={thumbnail} className="blur"/>
+          <div>
 
+          </div>
         </div>
       </div>
   )
