@@ -38,8 +38,21 @@ const Post = ({posts}) => {
         </div>
         <div className="contents-box">
           <img src={thumbnail} className="blur"/>
-          <div>
+          <div className="content">
+            <div className="more-icon">
+              <img src="/assets/icon-more.png" alt=""/>
+            </div>
+            <div className="thumbnail">
+              <img src={thumbnail} alt=""/>
+            </div>
+            <div className="description">
+            작게 잡고 성공 하는 것이 문제다.
+              목표를 크게 잡고 실패하는 것은 문제가 아니다. 목표를 작게 잡고 성공 하는 것이 문제다.
 
+            </div>
+            <div className="title">
+              <div>우아한 형제들 中</div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 .post-wrap{
   max-width : 90vw;
   margin-top : 5%;
-  height : 61vh;
+  height : 71vh;
 
   .post-header{
     display: flex;
@@ -33,7 +33,6 @@
       align-items: center;
       height : 1.75rem;
       margin-left : 3%;
-
     }
     .comment{
       margin-left : auto;
@@ -73,6 +72,7 @@
     height : 87%;
     border-radius: 7px;
     overflow: hidden;
+    position: relative;
     .blur{
       width : 100%;
       height : 100%;
@@ -81,6 +81,66 @@
       -o-filter:blur(22px);
       -ms-filter:blur(22px);
       filter: blur(22px);
+    }
+    .content{
+      position: absolute;
+      top : 0;
+      left : 0;
+      width : 100%;
+      height : 100%;
+      .more-icon{
+        max-width : 100%;
+        margin-top: 6%;
+        padding-right: 5.5%;
+        img{float : right;}
+      }
+      .thumbnail{
+        width : 100%;
+        display: flex;
+        justify-content: center;
+        margin-top : 12%;
+        img{
+          width : 18.75%;
+          height : 18.75%;
+          max-height: 18.75%;
+          min-height : 18.75%;
+        }
+      }
+      .description{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top : 7.5%;
+        min-height: 43%;
+        max-height: 43%;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-family: NanumMyeongjo, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.53;
+        letter-spacing: -0.2px;
+        color: #ffffff;
+        overflow-y: scroll;
+      }
+      .title{
+        width : 100%;
+        height : 14%;
+        position : relative;
+        div{
+          width : 100%;
+          position: absolute;
+          left : 0;
+          bottom : 20%;
+          text-align: center;
+          opacity: 0.6;
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 0.8rem;
+          line-height: 2.09;
+          color: #ffffff;
+        }
+      }
     }
   }
 }
